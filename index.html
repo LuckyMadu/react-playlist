@@ -24,16 +24,22 @@
           name: "Lahiru",
           age: 20
         };
-        handleClick(e) {
-          console.log(e.target);
-          //console.log(this.state);
-        }
-        handleMouseOver(e) {
+
+        handleClick = e => {
+          //console.log(e.target);
+          //this.state.name = "Madu"
+          this.setState({
+            name: "Madu",
+            age: 25
+          });
+          console.log(this.state);
+        };
+        handleMouseOver = e => {
           console.log(e.target, e.pageX);
-        }
-        handleCopy(e) {
+        };
+        handleCopy = e => {
           console.log("Try and try...");
-        }
+        };
         render() {
           return (
             <div className="app-content">
