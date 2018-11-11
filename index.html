@@ -24,7 +24,16 @@
           name: "Lahiru",
           age: 20
         };
-
+        handleClick(e) {
+          console.log(e.target);
+          //console.log(this.state);
+        }
+        handleMouseOver(e) {
+          console.log(e.target, e.pageX);
+        }
+        handleCopy(e) {
+          console.log("Try and try...");
+        }
         render() {
           return (
             <div className="app-content">
@@ -34,6 +43,9 @@
                 {" "}
                 My name is {this.state.name} and I am {this.state.age}
               </p>
+              <button onClick={this.handleClick}>Click Me</button>
+              <button onMouseOver={this.handleMouseOver}>Hover Me</button>
+              <p onCopy={this.handleCopy}>Bravery is the solution to regret</p>
             </div>
           );
         }
