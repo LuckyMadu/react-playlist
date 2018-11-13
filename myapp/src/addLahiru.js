@@ -13,7 +13,8 @@ class AddLahiru extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    //console.log(this.state);
+    this.props.addLahiru(this.state);
   };
 
   render() {

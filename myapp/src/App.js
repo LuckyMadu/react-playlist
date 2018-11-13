@@ -22,13 +22,21 @@ class App extends Component {
       }
     ]
   };
+  addLahiru = Madu => {
+    //console.log(lahiru);
+    Madu.id = Math.random();
+    let lahiru = [...this.state.lahiru, Madu];
+    this.setState({
+      lahiru: lahiru
+    });
+  };
   render() {
     return (
       <div className="App">
         <h1>My react App</h1>
         {/* <Lahiru name="Madu" age="40" /> */}
         <Lahiru lahiru={this.state.lahiru} />
-        <AddLahiru />
+        <AddLahiru addLahiru={this.addLahiru} />
       </div>
     );
   }
