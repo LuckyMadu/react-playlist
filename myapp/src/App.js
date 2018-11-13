@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Lahiru from "./Lahiru";
+import AddLahiru from "./addLahiru";
 
 class App extends Component {
   state = {
@@ -7,17 +8,17 @@ class App extends Component {
       {
         name: "Lahiru",
         age: 20,
-        id:1
+        id: 1
       },
       {
         name: "Madu",
         age: 45,
-        id:2
+        id: 2
       },
       {
         name: "Amara",
         age: 30,
-        id:3
+        id: 3
       }
     ]
   };
@@ -27,6 +28,7 @@ class App extends Component {
         <h1>My react App</h1>
         {/* <Lahiru name="Madu" age="40" /> */}
         <Lahiru lahiru={this.state.lahiru} />
+        <AddLahiru />
       </div>
     );
   }
