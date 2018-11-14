@@ -22,20 +22,39 @@ class App extends Component {
       }
     ]
   };
-  addLahiru = Madu => {
+  addLahiru = madu => {
     //console.log(lahiru);
-    Madu.id = Math.random();
-    let lahiru = [...this.state.lahiru, Madu];
+    madu.id = Math.random();
+    let lahiru = [...this.state.lahiru, madu];
     this.setState({
       lahiru: lahiru
     });
   };
+
+  deleteLahiru = id => {
+    let lahiru = this.state.lahiru.filter(madu => {
+      return madu.id !== id;
+    });
+    this.setState({
+      lahiru: lahiru
+    });
+  };
+
+  componentDidMount() {
+    //alert("I am an alert box!");
+    console.log("component mounted");
+  }
+
+  componentDidUpdate(prevProps, preState) {
+    console.log("component updated");
+    console.log(prevProps, preState);
+  }
   render() {
     return (
       <div className="App">
         <h1>My react App</h1>
         {/* <Lahiru name="Madu" age="40" /> */}
-        <Lahiru lahiru={this.state.lahiru} />
+        <Lahiru deleteLahiru={this.deleteLahiru} lahiru={this.state.lahiru} />
         <AddLahiru addLahiru={this.addLahiru} />
       </div>
     );

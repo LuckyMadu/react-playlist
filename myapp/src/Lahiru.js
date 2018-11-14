@@ -1,6 +1,6 @@
 import React from "react";
-
-const Lahiru = ({ lahiru }) => {
+import "./Lahiru.css";
+const Lahiru = ({ lahiru, deleteLahiru }) => {
   //const { lahiru } = props};
   /* const lahiruList = lahiru.map(lahiru => {
     if (lahiru.age > 30) {
@@ -31,6 +31,14 @@ const Lahiru = ({ lahiru }) => {
           <div className="lahiru" key={lahiru.id}>
             <div>Name: {lahiru.name}</div>
             <div>Age: {lahiru.age}</div>
+            <button
+              onClick={() => {
+                deleteLahiru(lahiru.id);
+              }}
+            >
+              {" "}
+              Delete Lahiru
+            </button>
           </div>
         ) : null;
       })}
